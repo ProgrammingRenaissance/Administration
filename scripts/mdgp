@@ -1,0 +1,6 @@
+mdgp () {
+  [[  -e $2 ]] && usr='$2' || usr='$USER'
+  [[ -e $3 ]] && grp='$3' || grp='$USER'
+  sudo mkdir -pm2770 '$1'
+  sudo chown '$usr':'$grp' -HR '$1'  
+}
